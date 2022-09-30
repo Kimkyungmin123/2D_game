@@ -1,10 +1,6 @@
-// load event : files when the whole page has been loaded, including all dependent resources such as stylesheets and images
 window.addEventListener("load", function () {
   // canvas setup
   const canvas = document.getElementById("canvas1");
-
-  // drowing context : a built in odject that contains all methods and properties that allow us to draw and
-  // animate colours, shapes and other araphics on HTML canvas
   const ctx = canvas.getContext("2d");
 
   canvas.width = 500;
@@ -13,7 +9,6 @@ window.addEventListener("load", function () {
   class InputHandler {
     constructor(game) {
       this.game = game;
-      // Regular Function ->ERROR
       window.addEventListener("keydown", (e) => {
         if (
           (e.key === "ArrowUp" || e.key === "ArrowDown") &&
@@ -90,8 +85,6 @@ window.addEventListener("load", function () {
     game.update();
     game.draw(ctx);
 
-    // requestAnimationFrame() : tells the broswer that we wish to perform an animation and it requests that the browser calls a specified
-    // function to update an animation before the next repaint.
     requestAnimationFrame(animate);
   }
   animate();
